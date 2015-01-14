@@ -111,15 +111,11 @@ abline(h = mean(intervalTable$avgSteps))</code></pre>
 </div>
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
-<ol style="list-style-type: decimal">
-<li>The total number of missing values in the dataset is :</li>
-</ol>
+<p>The total number of missing values in the dataset is :</p>
 <pre class="r"><code>sum(is.na(data$steps))</code></pre>
 <pre><code>## [1] 2304</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li><p>For filling in all of the missing values in the dataset, the chosen strategy is to replace NA values by the mean for that 5-minute interval</p></li>
-<li><p>Let’s create the dataset with missing data filled in :</p></li>
-</ol>
+<p>For filling in all of the missing values in the dataset, the chosen strategy is to replace NA values by the mean for that 5-minute interval</p>
+<p>Let’s create the dataset with missing data filled in :</p>
 <pre class="r"><code>data2 &lt;- data
 for (i in 1:nrow(data2)) {
     if (is.na(data2$steps[i])){
@@ -127,9 +123,7 @@ for (i in 1:nrow(data2)) {
         data2$steps[i] &lt;- floor(intervalTable$avgSteps[j]);
     }
 }</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>The histogram of the total number of steps taken each day with the filled in data :</li>
-</ol>
+<p>The histogram of the total number of steps taken each day with the filled in data :</p>
 <pre class="r"><code>sumTable2 &lt;- data2 %&gt;%
     group_by(date) %&gt;%
     summarize(SumSteps = sum(steps, na.rm = TRUE))

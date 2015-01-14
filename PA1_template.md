@@ -112,7 +112,7 @@ intervalTable$interval[which.max(intervalTable$avgSteps)]
 
 ## Imputing missing values
 
-1. The total number of missing values in the dataset is :
+The total number of missing values in the dataset is :
 
 
 ```r
@@ -123,9 +123,9 @@ sum(is.na(data$steps))
 ## [1] 2304
 ```
 
-2. For filling in all of the missing values in the dataset, the chosen strategy is to replace NA values by the mean for that 5-minute interval
+For filling in all of the missing values in the dataset, the chosen strategy is to replace NA values by the mean for that 5-minute interval
 
-3. Let's create the dataset with missing data filled in :
+Let's create the dataset with missing data filled in :
 
 
 ```r
@@ -138,7 +138,7 @@ for (i in 1:nrow(data2)) {
 }
 ```
 
-4. The histogram of the total number of steps taken each day with the filled in data :
+The histogram of the total number of steps taken each day with the filled in data :
 
 
 ```r
